@@ -9,7 +9,7 @@ provider "aws" {
 }
 
 
-### this is for the aws account that has the nonprod.darey.io domain ###
+### this is for the second aws account that owns the domain ###
 provider "aws" {
   alias = "test"
   region = "us-east-1"
