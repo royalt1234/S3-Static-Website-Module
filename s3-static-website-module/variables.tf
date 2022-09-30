@@ -10,6 +10,6 @@ variable "region" {
 }
 
 variable "domain_name" {
-  description = "apex Domain name in the master account(that is the nonprod.darey.io)"
+  description = "apex Domain name in the master account"
   type        = string
 }
