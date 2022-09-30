@@ -1,0 +1,16 @@
+### CI Pipeline that uploads the Index file on every commit to the s3 bucket ####
+
+stages:
+  - "upload"
+
+Upload:
+  stage: upload
+  image:
+    name: banst/awscli
+    entrypoint: [""]
+  script:
+    - aws configure set region $AWS_DEFAULT_REGION
+    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths '/*'
+    - aws s3 cp ./index.html s3://$S3_BUCKET_NAME/ --acl public-read --acl bucket-owner-full-control
+  only:
+    - master
