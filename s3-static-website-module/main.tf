@@ -135,7 +135,7 @@ resource "aws_route53_record" "websiteurl" {
 }
 
 
-#### New code for the NS record creation on nonprod.darey.io AWS account and updating on the account running the terraform apply. Also take note of the provider. ####
+#### New code for the NS record creation on the domain owner AWS account and updating on the account running the terraform apply. Also take note of the provider. ####
 
 resource "aws_route53_record" "example" {
   provider = aws.test
